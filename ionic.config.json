@@ -1,0 +1,7 @@
+{
+  "name": "prog-eval-1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
