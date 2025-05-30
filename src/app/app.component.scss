@@ -1,0 +1,11 @@
+ion-toolbar{
+  background-color: var(--ion-color-mycolor);
+}
+
+ion-list {
+  ion-item{
+    ion-icon{
+      color:var(--ion-color-mycolor-secondary);
+    }
+  }
+}

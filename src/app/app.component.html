@@ -1,3 +1,33 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+<!-- Menú lateral que se desliza desde la izquierda -->
+<ion-menu side="start" contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="mycolor">
+      <ion-title>Menú Principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list color="mycolor">
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/home" routerDirection="root" detail="false"><ion-icon name="home" slot="start" aria-hidden="true"></ion-icon>
+          Inicio
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle auto-hide="true">
+        <ion-item routerLink="/datospersonales" routerDirection="root" detail="false"><ion-icon name="person" slot="start" aria-hidden="true"></ion-icon>
+          Información Personal
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item routerLink="/contacto" routerDirection="root" detail="false"><ion-icon name="at" slot="start" aria-hidden="true"></ion-icon>
+          Contacto
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Área donde se renderizan las páginas -->
+<ion-router-outlet id="main-content"></ion-router-outlet>
+
+
+

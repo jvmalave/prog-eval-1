@@ -1,0 +1,32 @@
+ion-toolbar{
+  background-color:  var(--ion-color-mycolor);
+}
+
+ion-content{
+
+  margin-top: 30px;
+
+  .ion-card-picture{
+    width: 60vw;
+    margin: auto;
+    h2{
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+
+  .ion-card-text{
+    background-color: rgb(251, 232, 235);
+    width: 80vw;
+    margin-inline: auto;
+    margin-top: 20;
+    p{
+    padding: 10px;
+    text-align: center;
+    font-size: 1rem;
+    }
+  }
+    
+  }
+  
+  

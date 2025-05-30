@@ -1,4 +1,7 @@
+
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +10,14 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class HomePage {
+ 
+  constructor(
+    private router: Router,
+    private menu: MenuController
+  ) {}
 
-  constructor() {}
+irMenu() {
+    this.menu.open('start'); // 'start' es el lado del menú lateral
+  }
 
 }
