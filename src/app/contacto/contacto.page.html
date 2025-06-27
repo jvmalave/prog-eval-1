@@ -45,15 +45,17 @@
         Envíame un mensaje
     </h4>
   </ion-text>
-<!-- Formulario básico para mostrar datos personales -->
+<!-- Formulario básico para solicitar servicio de asesorias -->
 <form [formGroup]="contactoForm" (ngSubmit)="enviarMensaje()">
+
   <ion-item>
     <ion-label position="floating">Nombre</ion-label>
     <ion-input formControlName="nombre"></ion-input>
     <ion-text color="danger" *ngIf="contactoForm.get('nombre')?.invalid && contactoForm.get('nombre')?.touched">
-     <small>nombre es requerido y debe tener al menos 3 caracteres.</small> 
+      <small>Nombre es requerido y debe tener al menos 3 caracteres.</small>
     </ion-text>
   </ion-item>
+
   <ion-item>
     <ion-label position="floating">Email</ion-label>
     <ion-input type="email" formControlName="email"></ion-input>
@@ -61,13 +63,35 @@
       <small>Por favor, introduce un email válido.</small>
     </ion-text>
   </ion-item>
+
   <ion-item>
     <ion-label position="floating">Teléfono</ion-label>
     <ion-input type="tel" formControlName="telefono"></ion-input>
     <ion-text color="danger" *ngIf="contactoForm.get('telefono')?.invalid && contactoForm.get('telefono')?.touched">
-      <small>El teléfono debe contener entre 7 y 10 dígitos.</small>
+      <small>El teléfono debe ser móvil (04) y debe contener 11 dígitos.</small>
     </ion-text>
   </ion-item>
+
+  <ion-item>
+    <ion-label>Área de interés</ion-label>
+    <ion-select formControlName="area" placeholder="Seleccione un área">
+      <ion-select-option *ngFor="let area of areas" [value]="area.value">{{ area.label }}</ion-select-option>
+    </ion-select>
+    <ion-text color="danger" *ngIf="contactoForm.get('area')?.invalid && contactoForm.get('area')?.touched">
+      <small>Debe seleccionar un área.</small>
+    </ion-text>
+  </ion-item>
+
+  <ion-item *ngIf="temas.length > 0">
+    <ion-label>Tema de asesoría</ion-label>
+    <ion-select formControlName="tema" placeholder="Seleccione un tema">
+      <ion-select-option *ngFor="let tema of temas" [value]="tema">{{ tema }}</ion-select-option>
+    </ion-select>
+    <ion-text color="danger" *ngIf="contactoForm.get('tema')?.invalid && contactoForm.get('tema')?.touched">
+      <small>Debe seleccionar un tema.</small>
+    </ion-text>
+  </ion-item>
+
   <ion-item>
     <ion-label position="floating">Mensaje</ion-label>
     <ion-textarea formControlName="mensaje"></ion-textarea>
@@ -75,6 +99,7 @@
       <small>El mensaje es requerido y debe tener al menos 8 caracteres.</small>
     </ion-text>
   </ion-item>
+
   <ion-button 
     type="submit" 
     expand="block" 
@@ -86,5 +111,6 @@
     class="ion-margin">
     Envíame un mensaje
   </ion-button>
-</form>__  
+
+</form>
 </ion-content>
